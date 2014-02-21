@@ -9,9 +9,6 @@ MAINTAINER Matthew Harrison
 #sudo docker run -i -t -p 80:80 ubuntu /bin/bash
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV LANG en_US.utf8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
 
 RUN  echo "deb http://archive.ubuntu.com/ubuntu/ raring main universe" >> /etc/apt/sources.list
 RUN apt-get -y -q update
