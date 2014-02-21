@@ -1,4 +1,4 @@
 setup.sh
 bitcoin.conf
-supervisor.conf
+supervisord.conf
 authorizedkeys
