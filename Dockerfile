@@ -32,7 +32,6 @@ RUN sudo apt-get install python-software-properties
 RUN sudo add-apt-repository ppa:bitcoin/bitcoin
 RUN sudo apt-get update
 RUN sudo apt-get install bitcoind
-RUN mkdir ~/.bitcoin/
 
 
 # Config ssh and supervisor
@@ -46,8 +45,8 @@ RUN mkdir -p /etc/supervisor
 RUN cp /Bitcoind-Docker/supervisord.conf /etc/supervisor/supervisord.conf
 RUN touch /var/log/bitcoind_supervisor.log
 
-#Setup litecoin
-RUN mkdir /litecoin/data
+#Setup bitcoin
+RUN mkdir ~/.bitcoin/
 RUN cp /Bitcoind-Docker/bitcoin.conf ~/.bitcoin/bitcoin.conf
 
 #Supervisor
