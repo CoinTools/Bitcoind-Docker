@@ -19,7 +19,7 @@ RUN apt-get -y -q update
 RUN apt-get -qq -y install openssh-server
 
 RUN mkdir -p /var/run/sshd && \
-    echo $USERNAMEPASSWORD | chpasswd
+    echo 'root:root' | chpasswd
 # Install supervisor
 RUN apt-get install -yqq supervisor
 RUN apt-get clean
