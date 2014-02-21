@@ -15,7 +15,6 @@ MAINTAINER Matthew Harrison
 
 RUN sudo locale-gen en_US en_US.UTF-8
 RUN sudo locale-gen it_IT it_IT.UTF-8
-RUN sudo locale-gen xx_xx xx_XX.UTF-8 ...
 RUN sudo dpkg-reconfigure locales
 
 RUN  echo "deb http://archive.ubuntu.com/ubuntu/ raring main universe" >> /etc/apt/sources.list
