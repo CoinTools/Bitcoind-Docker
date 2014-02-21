@@ -8,10 +8,15 @@ MAINTAINER Matthew Harrison
 #We are going to expose port 80 so that our application will be accessible from the outside. 
 #sudo docker run -i -t -p 80:80 ubuntu /bin/bash
 
-ENV DEBIAN_FRONTEND noninteractive
-ENV LANG="en_US.utf8"
-ENV LANGUAGE="en_US:en"
-ENV LC_ALL="en_US.UTF-8"
+# ENV DEBIAN_FRONTEND noninteractive
+# ENV LANG en_US.utf8
+# ENV LANGUAGE en_US:en
+# ENV LC_ALL en_US.UTF-8
+
+RUN sudo locale-gen en_US en_US.UTF-8
+RUN sudo locale-gen it_IT it_IT.UTF-8
+RUN sudo locale-gen xx_xx xx_XX.UTF-8 ...
+RUN sudo dpkg-reconfigure locales
 
 RUN  echo "deb http://archive.ubuntu.com/ubuntu/ raring main universe" >> /etc/apt/sources.list
 RUN apt-get -y -q update
