@@ -42,12 +42,12 @@ RUN touch /root/.ssh/authorized_keys
 
 # supervisor
 RUN mkdir -p /etc/supervisor
-RUN cp /Bitcoind-Docker/supervisord.conf /etc/supervisor/supervisord.conf
+RUN cp /Bitcoind/supervisord.conf /etc/supervisor/supervisord.conf
 RUN touch /var/log/bitcoind_supervisor.log
 
 #Setup bitcoin
 RUN mkdir ~/.bitcoin/
-RUN cp /Bitcoind-Docker/bitcoin.conf ~/.bitcoin/bitcoin.conf
+RUN cp /Bitcoind/bitcoin.conf ~/.bitcoin/bitcoin.conf
 
 #Supervisor
 EXPOSE 11300
