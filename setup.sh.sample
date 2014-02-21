@@ -1,0 +1,9 @@
+ssh root@192.241.213.188
+
+git clone https://github.com/CoinTools/Bitcoind-Docker.git
+
+cd ~/Bitcoind-Docker
+
+sudo docker build -e USERNAMEPASSWORD='root:root' --no-cache=false -t Bitcoind .
+
+sudo docker run
