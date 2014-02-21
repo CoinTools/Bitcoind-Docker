@@ -24,7 +24,7 @@ username = root
 password = password
 
 [program:bitcoind]
-command = bitcoind 
+command = bitcoind -reindex
 directory = ~
 user = root
 autostart=true
