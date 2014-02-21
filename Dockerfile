@@ -26,12 +26,12 @@ RUN apt-get clean
 
 
 # Setup and install litecoin
-RUN sudo apt-get install -y build-essential git libssl-dev libdb5.1++-dev libboost-all-dev libqrencode-dev
+RUN apt-get install -y build-essential git libssl-dev libdb5.1++-dev libboost-all-dev libqrencode-dev
 
-RUN sudo apt-get install -y python-software-properties
-RUN sudo add-apt-repository -y ppa:bitcoin/bitcoin
-RUN sudo apt-get -y update
-RUN sudo apt-get install -y bitcoind
+RUN apt-get install -y software-properties-common wget python-software-properties
+RUN add-apt-repository -y ppa:bitcoin/bitcoin
+RUN apt-get -y update
+RUN apt-get install -y bitcoind
 
 
 # Config ssh and supervisor
