@@ -1,9 +1,24 @@
-ssh root@192.241.213.188
-
+# Sign into server
+ssh root@serverIP
 git clone https://github.com/CoinTools/Bitcoind-Docker.git
 
 cd ~/Bitcoind-Docker
+touch bitcoin.conf
+touch supervisord.conf
 
-sudo docker build -e USERNAMEPASSWORD='root:root' --no-cache=false -t Bitcoind .
 
-sudo docker run
+# Copy over our data with secure passwords
+ cat bitcoin.conf | \
+          ssh root@serverIP 'cat >> ~/Bitcoind-Docker/bitcoin.conf'
+
+ cat supervisor.conf | \
+          ssh root@serverIP 'cat >> ~/Bitcoind-Docker/supervisor.conf'
+
+# Build docker
+sudo docker build  \
+ --no-cache=false -t Bitcoind .
+
+# Change password after
+ssh root@serverIP -p 2222
+cd /var/run/sshd && \
+   echo 'root:root' | chpasswd
