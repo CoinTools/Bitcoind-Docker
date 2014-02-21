@@ -1,12 +1,12 @@
 # Docker Bitcoin Daemon
 Comes with ssh, supervisor and bitcoin daemon.  Ready to plug and play with a digital ocean instance or any server running docker 0.8
 
-Start the server:
+#### Start the server:
 	bitcoind -reindex
 
-### Here is a list of [bitcoind commands](https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_calls_list)
+#### Here is a list of [bitcoind commands](https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_calls_list)
 
-### Other commands:
+#### Other commands:
 	bitcoind getinfo
 	bitcoind getbalance
 	etc...
